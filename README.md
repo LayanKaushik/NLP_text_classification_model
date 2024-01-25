@@ -19,7 +19,7 @@ To tackle this supervised classification task, we've broken down the process int
 
 ## Setup
 
-We imported all necessary libraries from nltk for text pre-processing, as well as sklearn and keras for ML & DL algorithms, and libraries for word embedding. Some rows were manually cleaned to correct column mismatches in pandas. This manual approach was feasible due to the limited number of such issues.
+We imported all necessary libraries from nltk for text pre-processing, as well as sklearn and pytorch for ML & DL algorithms, and libraries for word embedding. Some rows were manually cleaned to correct column mismatches in pandas. This manual approach was feasible due to the limited number of such issues.
 
 We conducted exploratory data analysis on the TikTok dataset to gauge the importance of other variables and assess whether new variables could enrich the model's information base.
 
