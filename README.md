@@ -50,13 +50,13 @@ Handling text data in Machine Learning models can be challenging, as these model
 1. **Term Frequency-Inverse Document Frequencies (tf-idf)**: This technique assigns a value to a word, increasing in proportion to its count in a document but decreasing relative to its frequency across the corpus. We utilized sklearn's TfidfVectorizer.
 2. **Word2Vec**: This approach employs a shallow neural network to learn word embeddings, capturing the context of a word within the text. We utilized gensim's Word2Vec. 
 3. **Global Vectors (GloVe)**: GloVe is an unsupervised learning algorithm for obtaining vector representations of words. It focuses on aggregating global word-word co-occurrence statistics from a corpus and uses these statistics to derive the word vectors. We utilized gensim's glove2word2vec.
-4. **Bidirectional Encoder Representations from Transformers (BERT)**: This technique enables the model to understand the context of a word based on its surrounding words using its bidirectional training. We utilized pytorch's BertTokenizer and BertModel.
+4. **Bidirectional Encoder Representations from Transformers (BERT)**: This technique enables the model to understand the context of a word based on its surrounding words using its bidirectional training. We utilized transformers's BertTokenizer and BertModel.
 
 The 'utils.py' file contains functions for implementing any of these vectorization methods.
 
 ## Implementing ML & DL Algorithms
 
-In this phase, we applied a range of machine learning and deep learning algorithms to our vectorized dataset. The models included logistic regression, SVM, XgBoost, and various ensemble and neural network models. We conducted a thorough hyperparameter tuning using GridSearchCV, primarily focusing on optimizing the F1 score. Post-tuning, we evaluated model performance based on F1 score and accuracy metrics on the test dataset. Detailed results and insights from this analysis are summarized in the following section.
+In this phase, we applied a range of machine learning and deep learning algorithms to our vectorized dataset. The models included logistic regression, SVM, XgBoost, and various ensemble and neural network models. We conducted a thorough hyperparameter tuning using GridSearchCV, primarily focusing on optimizing the F1 score. Post-tuning, we evaluated model performance based on **F1 score** and **accuracy** metrics on the test dataset. Detailed results and insights from this analysis are summarized in the following section.
 
 ## Findings & Conclusion
 
@@ -66,10 +66,22 @@ In this phase, we applied a range of machine learning and deep learning algorith
 |----------------------|------------------|----------|----------|
 | Tf-idf               | Logistic Regression | XX%    | XX%     |
 | Tf-idf               | SVM              | XX%     | XX%     |
-| Word2Vec             | XgBoost          | XX%     | XX%     |
-| GloVe                | Neural Network   | XX%     | XX%     |
-| BERT                 | Ensemble Model   | XX%     | XX%     |
-| ...                  | ...              | ...     | ...     |
+| Tf-idf               | XGBoost              | XX%     | XX%     |
+| Tf-idf               | Ensemble Model              | XX%     | XX%     |
+| Tf-idf               | CNN_1              | XX%     | XX%     |
+| Tf-idf               | CNN_2              | XX%     | XX%     |
+| Word2Vec               | Logistic Regression | XX%    | XX%     |
+| Word2Vec               | SVM              | XX%     | XX%     |
+| Word2Vec               | XGBoost              | XX%     | XX%     |
+| Word2Vec               | Ensemble Model              | XX%     | XX%     |
+| Word2Vec               | CNN_1              | XX%     | XX%     |
+| Word2Vec               | CNN_2              | XX%     | XX%     |
+| GloVe               | Logistic Regression | XX%    | XX%     |
+| GloVe               | SVM              | XX%     | XX%     |
+| GloVe               | XGBoost              | XX%     | XX%     |
+| GloVe               | Ensemble Model              | XX%     | XX%     |
+| GloVe               | CNN_1              | XX%     | XX%     |
+| GloVe               | CNN_2              | XX%     | XX%     |
 
 TODO (Table and word embedding analysis, brief description of the strongest predictors)
 
