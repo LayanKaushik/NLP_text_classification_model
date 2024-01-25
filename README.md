@@ -66,10 +66,22 @@ In this phase, we applied a range of machine learning and deep learning algorith
 |----------------------|------------------|----------|----------|
 | Tf-idf               | Logistic Regression | XX%    | XX%     |
 | Tf-idf               | SVM              | XX%     | XX%     |
-| Word2Vec             | XgBoost          | XX%     | XX%     |
-| GloVe                | Neural Network   | XX%     | XX%     |
-| BERT                 | Ensemble Model   | XX%     | XX%     |
-| ...                  | ...              | ...     | ...     |
+| Tf-idf               | XGBoost              | XX%     | XX%     |
+| Tf-idf               | Ensemble Model              | XX%     | XX%     |
+| Tf-idf               | CNN_1              | XX%     | XX%     |
+| Tf-idf               | CNN_2              | XX%     | XX%     |
+| Word2Vec               | Logistic Regression | XX%    | XX%     |
+| Word2Vec               | SVM              | XX%     | XX%     |
+| Word2Vec               | XGBoost              | XX%     | XX%     |
+| Word2Vec               | Ensemble Model              | XX%     | XX%     |
+| Word2Vec               | CNN_1              | XX%     | XX%     |
+| Word2Vec               | CNN_2              | XX%     | XX%     |
+| GloVe               | Logistic Regression | XX%    | XX%     |
+| GloVe               | SVM              | XX%     | XX%     |
+| GloVe               | XGBoost              | XX%     | XX%     |
+| GloVe               | Ensemble Model              | XX%     | XX%     |
+| GloVe               | CNN_1              | XX%     | XX%     |
+| GloVe               | CNN_2              | XX%     | XX%     |
 
 TODO (Table and word embedding analysis, brief description of the strongest predictors)
 
