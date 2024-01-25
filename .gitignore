@@ -162,3 +162,8 @@ cython_debug/
 # ignore data file
 
 code/tiktok_test.csv
+
+# ignore GloVe file
+
+code/glove.6B.300d.txt
+code/glove_to_word2vec.txt
