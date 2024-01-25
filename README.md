@@ -12,6 +12,7 @@ To tackle this supervised classification task, we've broken down the process int
 
 - Setup: Importing Libraries, Loading Data, and Conducting Exploratory Data Analysis
 - Text Pre-processing
+- Data Split and Feature Selection
 - Text Vectorization
 - Implementing ML & DL Algorithms
 - Findings
@@ -37,6 +38,10 @@ Before modeling, it's crucial to preprocess the data. The following steps were i
 3. Lemmatization: Simplifying words to their base form.
 
 Our 'utils.py' file contains additional utilities for further text preprocessing options.
+
+## Data Split and Feature Selection
+
+After splitting the data into training and test sets, we address the non-text features by either dropping them or applying PCA, as dictated by our analysis. Detailed instructions on utilizing the feature selection function are available in the 'utils.py' file. This step ensures that only the most relevant features are used for model training, enhancing the efficiency and effectiveness of our classification algorithms.
 
 ## Text Vectorization
 
