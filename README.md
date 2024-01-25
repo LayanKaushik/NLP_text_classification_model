@@ -12,10 +12,10 @@ To tackle this supervised classification task, we've broken down the process int
 
 - Setup: Importing Libraries, Loading Data, and Conducting Exploratory Data Analysis
 - Text Pre-processing
-- Data Split and Feature Selection
+- Data Split & Feature Selection
 - Text Vectorization
 - Implementing ML & DL Algorithms
-- Findings
+- Findings & Conclusion
 
 ## Setup
 
@@ -39,7 +39,7 @@ Before modeling, it's crucial to preprocess the data. The following steps were i
 
 Our 'utils.py' file contains additional utilities for further text preprocessing options.
 
-## Data Split and Feature Selection
+## Data Split & Feature Selection
 
 After splitting the data into training and test sets, we address the non-text features by either dropping them or applying PCA, as dictated by our analysis. Detailed instructions on utilizing the feature selection function are available in the 'utils.py' file. This step ensures that only the most relevant features are used for model training, enhancing the efficiency and effectiveness of our classification algorithms.
 
@@ -56,9 +56,20 @@ The 'utils.py' file contains functions for implementing any of these vectorizati
 
 ## Implementing ML & DL Algorithms
 
-TODO
+In this phase, we applied a range of machine learning and deep learning algorithms to our vectorized dataset. The models included logistic regression, SVM, XgBoost, and various ensemble and neural network models. We conducted a thorough hyperparameter tuning using GridSearchCV, primarily focusing on optimizing the F1 score. Post-tuning, we evaluated model performance based on F1 score and accuracy metrics on the test dataset. Detailed results and insights from this analysis are summarized in the following section.
 
-## Findings
+## Findings & Conclusion
+
+### Model Performance Summary
+
+| Vectorization Method | Model            | F1 Score | Accuracy |
+|----------------------|------------------|----------|----------|
+| Tf-idf               | Logistic Regression | XX%    | XX%     |
+| Tf-idf               | SVM              | XX%     | XX%     |
+| Word2Vec             | XgBoost          | XX%     | XX%     |
+| GloVe                | Neural Network   | XX%     | XX%     |
+| BERT                 | Ensemble Model   | XX%     | XX%     |
+| ...                  | ...              | ...     | ...     |
 
 TODO (Table and word embedding analysis, brief description of the strongest predictors)
 
