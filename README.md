@@ -60,30 +60,76 @@ In this phase, we applied a range of machine learning and deep learning algorith
 
 ## Findings & Conclusion
 
-### Model Performance Summary
+### Model Performance Summary on Test Dataset
+
+#### Using only text vectorization
 
 | Vectorization Method | Model            | F1 Score | Accuracy |
 |----------------------|------------------|----------|----------|
-| Tf-idf               | Logistic Regression | XX%    | XX%     |
-| Tf-idf               | SVM              | XX%     | XX%     |
-| Tf-idf               | XGBoost              | XX%     | XX%     |
-| Tf-idf               | Ensemble Model              | XX%     | XX%     |
-| Tf-idf               | CNN_1              | XX%     | XX%     |
-| Tf-idf               | CNN_2              | XX%     | XX%     |
-| Word2Vec               | Logistic Regression | XX%    | XX%     |
-| Word2Vec               | SVM              | XX%     | XX%     |
-| Word2Vec               | XGBoost              | XX%     | XX%     |
-| Word2Vec               | Ensemble Model              | XX%     | XX%     |
-| Word2Vec               | CNN_1              | XX%     | XX%     |
-| Word2Vec               | CNN_2              | XX%     | XX%     |
-| GloVe               | Logistic Regression | XX%    | XX%     |
-| GloVe               | SVM              | XX%     | XX%     |
-| GloVe               | XGBoost              | XX%     | XX%     |
-| GloVe               | Ensemble Model              | XX%     | XX%     |
-| GloVe               | CNN_1              | XX%     | XX%     |
-| GloVe               | CNN_2              | XX%     | XX%     |
+| Tf-idf               | Logistic Regression | 0.49    | 0.701     |
+| Tf-idf               | SVM              |   0.454  |   0.683   |
+| Tf-idf               | XGBoost              |  0.401    |   0.676   |
+| Tf-idf               | Ensemble Model (soft voting)              | 0.376    | 0.73     |
+| Tf-idf               | Ensemble Model (hard voting)             | 0.36    | 0.721     |
+| Tf-idf               | CNN              | --    | 0.695     |
+| Word2Vec               | Logistic Regression |  0.10    | 0.68     |
+| Word2Vec               | SVM              | 0.0     | 0.695     |
+| Word2Vec               | XGBoost              | 0.466     | 0.691     |
+| Word2Vec               | Ensemble Model (soft voting)             | 0.324     | 0.701     |
+| Word2Vec               | Ensemble Model  (hard voting)            | 0.348     | 0.72     |
+| Word2Vec               | CNN              | --     |   0.695   |
+| GloVe               | Logistic Regression | 0.42    | 0.70     |
+| GloVe               | SVM              | 0.463    | 0.715     |
+| GloVe               | XGBoost              | 0.457    | 0.7     |
+| GloVe               | Ensemble Model (soft voting)              | 0.414    |  0.731    |
+| GloVe               | Ensemble Model  (hard voting)            |  0.431    |  0.736    |
+| GloVe               | CNN              | --     | 0.695    |
 
-TODO (Table and word embedding analysis, brief description of the strongest predictors)
+#### Using text vectorization and scaled character count
+
+| Vectorization Method | Model            | F1 Score | Accuracy |
+|----------------------|------------------|----------|----------|
+| Tf-idf               | Logistic Regression | 0.454    | 0.708     |
+| Tf-idf               | SVM              |    0.45  |  0.686  |
+| Tf-idf               | XGBoost              |  0.449    |   0.701   |
+| Tf-idf               | Ensemble Model (soft voting)              | 0.389    | 0.728     |
+| Tf-idf               | Ensemble Model (hard voting)             | 0.364    | 0.715     |
+| Tf-idf               | CNN              | --    | 0.695     |
+| Word2Vec               | Logistic Regression |  0.159    | 0.683    |
+| Word2Vec               | SVM              | 0.09     | 0.696     |
+| Word2Vec               | XGBoost              | 0.431     | 0.701     |
+| Word2Vec               | Ensemble Model (soft voting)             | 0.39     | 0.735     |
+| Word2Vec               | Ensemble Model  (hard voting)            | 0.376     | 0.735     |
+| Word2Vec               | CNN              | --     |   0.695   |
+| GloVe               | Logistic Regression | 0.393    | 0.691     |
+| GloVe               | SVM              | 0.494    | 0.71     |
+| GloVe               | XGBoost              | 0.486    | 0.705     |
+| GloVe               | Ensemble Model (soft voting)              | 0.451   |  0.728    |
+| GloVe               | Ensemble Model  (hard voting)            |  0.415    |  0.723    |
+| GloVe               | CNN              | --     | 0.695    |
+
+#### Using text vectorization and pca
+
+| Vectorization Method | Model            | F1 Score | Accuracy |
+|----------------------|------------------|----------|----------|
+| Tf-idf               | Logistic Regression | 0.466    | 0.706     |
+| Tf-idf               | SVM              |    0.454  |  0.683  |
+| Tf-idf               | XGBoost              |  0.462    |  0.71   |
+| Tf-idf               | Ensemble Model (soft voting)              | 0.380    | 0.723     |
+| Tf-idf               | Ensemble Model (hard voting)             | 0.353    | 0.713     |
+| Tf-idf               | CNN              | --    | 0.695     |
+| Word2Vec               | Logistic Regression |  0.165    | 0.68     |
+| Word2Vec               | SVM              | 0.021    | 0.693     |
+| Word2Vec               | XGBoost              | 0.461     | 0.708     |
+| Word2Vec               | Ensemble Model (soft voting)             | 0.355     | 0.721     |
+| Word2Vec               | Ensemble Model  (hard voting)            | 0.379     | 0.738     |
+| Word2Vec               | CNN              | --     |   0.695   |
+| GloVe               | Logistic Regression | 0.401    | 0.691     |
+| GloVe               | SVM              | 0.462    | 0.713     |
+| GloVe               | XGBoost              | 0.413   | 0.678     |
+| GloVe               | Ensemble Model (soft voting)              | 0.469    |  0.736    |
+| GloVe               | Ensemble Model  (hard voting)            |  0.411   |  0.728    |
+| GloVe               | CNN              | --     | 0.695    |
 
 ## Acknowledgment
 
