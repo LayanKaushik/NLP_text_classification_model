@@ -28,6 +28,7 @@ We conducted exploratory data analysis on the TikTok dataset to gauge the import
 2. **Missing values**: The dataset contains no missing values.
 3. **Other Variables**: 'create_time', 'comment_count', and 'like_count' displayed some correlation with the target variable. Other variables were excluded as they did not yield useful insights. We plan to evaluate the importance of each variable later and discard those that do not contribute to the model.
 4. **New Variables**: Two new variables, 'word_count' and 'char_count', were introduced. EDA revealed that texts classified as funny typically have fewer words and characters on average and exhibit a decent correlation with the target variable. Either 'char_count' or 'word_count' could serve as predictors in the model since they are nearly 100% correlated.
+5. **Data Refinement for Text Analysis**: To improve the accuracy of our text-based predictors, we filtered out words that were common and highly frequent across both funny and non-funny classes. This step was undertaken to focus on more distinctive language features that might better differentiate between the two categories.
 
 ## Text pre-processing
 
@@ -130,6 +131,17 @@ In this phase, we applied a range of machine learning and deep learning algorith
 | GloVe               | Ensemble Model (soft voting)              | 0.469    |  0.736    |
 | GloVe               | Ensemble Model  (hard voting)            |  0.411   |  0.728    |
 | GloVe               | CNN              | --     | 0.695    |
+
+Our analysis identified ensemble methods, particularly with GloVe vectorization, as the most effective approach in classifying the humor content in TikTok videos discussing ADHD. These methods consistently outperformed individual models across various vectorization techniques.
+
+#### Key Observations:
+1. **Ensemble Methods Excel**: Ensemble methods with GloVe vectorization showed the best performance, achieving high F1 scores and accuracy.
+2. **Feature Importance Analysis**: Words associated with conversational and expressive language, such as 'gon', 'look', 'okay', and 'yeah', emerged as strong predictors for humorous content, aligning with the interactive nature of humor.
+3. **Refined Text Analysis**: Refining the text data by removing high-frequency words common to both classes resulted in a more distinctive set of features, improving the model's ability to differentiate between humorous and non-humorous content.
+4. **Beneficial Use of PCA and Additional Predictors**: The inclusion of PCA and additional predictors like word and character count slightly improved accuracy and F1 scores, suggesting a potential for model optimization.
+
+#### Recommendations:
+- **Further Tuning and Analysis**: Additional fine-tuning and exploration of PCA and other predictors could enhance model performance. Continue refining the text data to emphasize unique language features that are indicative of humor.
 
 ## Acknowledgment
 
