@@ -14,6 +14,7 @@
 
 import pandas as pd
 import numpy as np
+from collections import Counter
 
 #for text pre-processing
 import re, string
@@ -126,6 +127,15 @@ def preprocess_text(text, remove_sw=True, stemming=False, lemmatization=False, s
     if lemmatization:
         text = lemmatize_text(text)
     return text
+
+def count_words(data, key):
+    """
+    Counts the frequency of words in a specified column of the DataFrame.
+    :param data: The DataFrame containing the data.
+    :param key: str - The column name in the DataFrame to count words from.
+    :return: obj - A Counter object with word frequencies.
+    """
+    return Counter([word for sublist in data[key] for word in sublist])
 
 def perform_pca(train_data, test_data, features, n_components=2):
     """
